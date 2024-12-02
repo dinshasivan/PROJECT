@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import { adminRoute } from './Routers/adminRouter.js';
 import { userRoute } from './Routers/userRouter.js';
-import { ensureAdmin,isLoggedIn} from './Middle-Ware/auth.js';
+import { ensureAdmin} from './Middle-Ware/auth.js';
 
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -20,9 +20,10 @@ const port = 8001;
 mongoose.connect('mongodb://localhost:27017/FloraDelight_DB');
 
 // setupAdmin();
-app.use(isLoggedIn);
+
 app.use(ensureAdmin);
 app.use('/',adminRoute)
+
 app.use('/',userRoute);
 
 

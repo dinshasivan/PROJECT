@@ -62,5 +62,32 @@ const isAdmin = (req, res, next) => {
     } else {
         res.status(403).json({ message: "Access denied. Only admins can perform this action." });
     }
+
+    
+    
 };
+
+
+// const authenticate=(req,res,next)=>{ //next is function that redirect the adminRoute, then execute the next function
+//     const cookies= req.headers.cookie;
+ 
+    
+//     const cookie=cookies.split(';');
+//     for(let cooki of cookie){
+//         const [name,token]= cooki.trim().split('=');
+//         console.log(name,token);
+        
+//         if(name=='authToken'){
+//             const verified= jwt.verify(token,secretKey);
+//             req.UserName=verified.UserName;
+//             req.UserRole=verified.UserRole;
+//             console.log(req.UserRole);
+            
+//             break;
+//         }
+//     }
+//     next();
+// }
+
+
 export {ensureAdmin,isAdmin,isLoggedIn} // Export the middleware

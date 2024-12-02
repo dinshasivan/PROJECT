@@ -107,7 +107,15 @@ adminRoute.post('/login', async (req, res) => {
 
 // Route to add a product (Admin only)
 adminRoute.post('/add-product', isAdmin, upload.single('image'), async (req, res) => {
+    const user = req.UserRole;
+    console.log(user);
     try {
+       
+        
+
+        if(user ==='admin'){
+
+        
         const { productName, price, category, description } = req.body;
 
         const newProduct = new Product({
@@ -124,6 +132,10 @@ adminRoute.post('/add-product', isAdmin, upload.single('image'), async (req, res
             message: "Product added successfully",
             productId: result._id
         });
+        }else{
+            console.log('access denide');
+            
+        }
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: "Error adding product", error });
@@ -194,7 +206,7 @@ adminRoute.get('/search-products', async (req, res) => {
 
 
 // updating product details
-adminRoute.patch('/update-product/:id', upload.single('image'),isAdmin, async (req, res) => {
+adminRoute.patch('/update-product/:id', upload.single('image'), async (req, res) => {
     try {
         const productId = req.params.id;
 
@@ -236,7 +248,7 @@ adminRoute.patch('/update-product/:id', upload.single('image'),isAdmin, async (r
 });
 
 //delete prooduct
-adminRoute.delete('/remove-product/:productId', isAdmin, async (req, res) => {
+adminRoute.delete('/remove-product/:productId',  async (req, res) => {
     try {
         const { productId } = req.params;
 
@@ -256,12 +268,25 @@ adminRoute.delete('/remove-product/:productId', isAdmin, async (req, res) => {
     }
 });
 
+
+
 adminRoute.post('/logout', (req, res) => {
     // Clear the authentication cookie
     res.clearCookie('authToken', { httpOnly: true, secure: true }); // Make sure secure is set to true if you're using HTTPS
     
     return res.status(200).json({ message: 'Logged out successfully' });
 });
+
+// adminRoute.get('/viewUser',authenticate,(req,res)=>{
+//     try{
+//     const user=req.UserRole;
+//     // console.log(user);
+//     res.json({user});
+//     }
+//     catch{
+//         res.status(404).json({message:'user not authorized'});
+//     }
+// })
 
 export { adminRoute , User, Product};// Export the router
 
