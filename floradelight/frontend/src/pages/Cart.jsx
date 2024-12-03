@@ -37,6 +37,7 @@ const Cart = () => {
 
     console.log("Cart Data with Names and Images:", tempData);
     console.log("Initial Quantities:", initialQuantities);
+    setCartData(tempData)
   }, [cartItems, products]);
 
 

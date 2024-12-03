@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { products } from "../assets/data";
+import axios from 'axios'
 
 export const ShopContext = createContext();
 
@@ -76,10 +77,18 @@ const getCartAmount = () => {
   return totalAmount;
 };
 
+const getProductData = async ()=>{
+  try{
+    const response = await axios.get('http://localhost:4000/api/product/get-product')
+  }catch(error){
+    console.log(error);
+    
+  }
+}
 
 const contextvalue = {products,currency,delivery_charge,search,
   setSearch,showSearch,setShowSearch, addToCart,getCartCount,cartItems,updateQuantity,getCartAmount,
-  delivery_charge
+  
 }
   return (
     <ShopContext.Provider value={contextvalue}>
