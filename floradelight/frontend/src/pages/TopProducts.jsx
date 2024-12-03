@@ -53,24 +53,24 @@ const TopProducts = () => {
           <div className='bg-primary border ring-slate-900/5 pl-5 py-3'>
             <h5 className='h5 mb-4'>Categories</h5>
             <div className='flex flex-col gap-2 text-sm font-light'>
-              {["Flowers", "Gifts", "Plants"].map((cat)=>{
+              {["Flowers", "Gifts", "Plants"].map((cat)=>(
                 <label key={cat} className='flex gap-2 medium-14 text-gray-30'>
                   <input type="checkbox" value={cat} className='w-3' />
                   {cat}
                 </label>
-              })}
+              ))}
             </div>
           </div>
           {/* filter type */}
           <div className='bg-primary border ring-slate-900/5 pl-5 py-3 mt-4'>
             <h5 className='h5 mb-4'>Type</h5>
             <div className='flex flex-col gap-2 text-sm font-light'>
-              {["Rose", "personalised" , "flowers"].map((subcat)=>{
+              {["Rose", "personalised" , "flowers"].map((subcat)=>(
                   <label key={subcat} className='flex gap-2 medium-14 text-gray-30'>
                     <input type="checkbox" value={subcat} className='w-3' />
                     {subcat}
                   </label>
-                })}
+                ))}
             </div>
           </div>
           {/* right side */}
@@ -82,9 +82,9 @@ const TopProducts = () => {
               {/* product categories */}
               <div>
                 {filteredProduct.length > 0 ?(
-                  filteredProduct.map((product)=>{
+                  filteredProduct.map((product)=>(
                     <Item product={product} key={product._id}/>
-                  })
+                  ))
                 ): (
                   <p className='capitalize'>No Products found selected category</p>
                 )}

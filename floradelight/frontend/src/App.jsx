@@ -9,19 +9,24 @@ import Cart from "./pages/Cart";
 import PlaceOrder from "./pages/PlaceOrder";
 import Orders from "./pages/Orders";
 import Verify from "./pages/Verify";
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Login from "./pages/Login";
 
 
 export default function App (){
   return (
     <div className="overflow-hidden text-[#404040] bg-slate-50">
+      <ToastContainer/>
       <Header/>
      
       <Routes>
         <Route path="/" element={<Home/>}/>
+        <Route path="/login" element={<Login/>}/>
         <Route path="/topproducts" element={<TopProducts/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/contact" element={<Contact/>}/>
-        <Route path="/products" element={<Products/>}/>
+        <Route path="/product/:productId" element={<Products/>}/>
         <Route path="/cart" element={<Cart/>}/>
         <Route path="/place-order" element={<PlaceOrder/>}/>
         <Route path="/orders" element={<Orders/>}/>

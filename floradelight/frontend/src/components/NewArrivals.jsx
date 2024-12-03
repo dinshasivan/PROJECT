@@ -11,19 +11,19 @@ const NewArrivals = () => {
     
 
     useEffect(()=>{
-        const data = products.slice(0.10)
+        const data = products.slice(0,10)
         setNewArrivals(data)
     },[products])
   return (
-   <section >
+   <section className='max-padd-container'>
         <Title title={'New Arrivals'} titleStyle={'text-center'} />
 
         <div className='grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3'>
-            {newArrivals.map((product)=>{
+            {newArrivals.map((product)=>(
                 <div key={product._id}>
                     <Item product={product}/>
                 </div>
-            })}
+            ))}
         </div>
    </section>
   )

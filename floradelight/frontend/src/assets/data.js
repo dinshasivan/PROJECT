@@ -1,4 +1,4 @@
-import image1 from './products/bc.jpg'
+import image1 from './product/bc.jpg'
 
 export const products =[
     {
@@ -19,7 +19,7 @@ export const products =[
         image:[image1],
         category:"Floers",
         subCategory:"Rose",
-        popular:false
+        popular:true
     },
     {
         _id:"3",
