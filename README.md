@@ -8,7 +8,7 @@ Floradelight is a user-friendly web application for delivering gifts and flowers
 
 ### Prerequistes
 
-Frontend: HTML, Tailwind CSS, JavaScript
+Frontend: HTML, Tailwind CSS, JavaScript, React
 
 Backend: Node.js, Express.js
 
