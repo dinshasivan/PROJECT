@@ -23,7 +23,7 @@ To run the project locally, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone git@github.com:dinshasivan/Pharma_Track.git
+    git clone git@github.com:dinshasivan/PROJECT.git
     ```
 2. Navigate to the project directory:
     ```bash
@@ -34,6 +34,23 @@ To run the project locally, follow these steps:
     npm install
     ```
 4. Start the project:
+    ```bash
+    npm run dev
+    ```
+    
+---
+### Backend Setup
+
+
+1. Navigate to the project directory:
+    ```bash
+    cd backend
+    ```
+2. Install the dependencies:
+    ```bash
+    npm install
+    ```
+3. Start the project:
     ```bash
     npm run dev
     ```
