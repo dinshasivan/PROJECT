@@ -14,19 +14,28 @@ Backend: Node.js, Express.js
 
 Database: MongoDB
 
-### Run Locally
- 1. Clone repo
 
-$ git@github.com:dinshasivan/PROJECT.git
+## Getting Started
 
- 2.Install MongoDB
- 3.Run Backend
-$ npm install
-$ npm run dev
+To run the project locally, follow these steps:
 
- 4.Run Frontend
+### Frontend Setup
 
-Open new ternimal
-$ cd frontend
-$ npm install
-$ npm run dev
+1. Clone the repository:
+    ```bash
+    git clone git@github.com:dinshasivan/Pharma_Track.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd frontend
+    ```
+3. Install the dependencies:
+    ```bash
+    npm install
+    ```
+4. Start the project:
+    ```bash
+    npm run dev
+    ```
+    
+---
